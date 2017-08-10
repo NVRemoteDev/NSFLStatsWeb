@@ -260,3 +260,5 @@ paket-files/
 __pycache__/
 *.pyc
 /NSFL/External/WebScaper.exe.config
+/NSFL/NSFL/Properties/PublishProfiles/NSFLStats - FTP.pubxml
+/NSFL/NSFL/Properties/PublishProfiles/NSFLStats - Web Deploy.pubxml

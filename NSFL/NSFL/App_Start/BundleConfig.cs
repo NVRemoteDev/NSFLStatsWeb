@@ -29,10 +29,8 @@ namespace NSFL
             bundles.Add(new ScriptBundle("~/bundles/datatables").Include(
                       "~/Scripts/DataTables/jquery.dataTables.min.js"));
 
-            bundles.Add(new StyleBundle("~/Content/datatables").Include(
-                      "~/Content/DataTables/jquery.dataTables.min.css"));
-
             bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/DataTables/jquery.dataTables.min.css",
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
         }
