@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace NSFL.Models.Player
+{
+    public class Player
+    {
+        public string PlayerSeasonDrafted { get; set; }
+
+        public string PlayerFirstName { get; set; }
+
+        public string PlayerLastName { get; set; }
+
+        public int PlayerTPE { get; set; }
+
+        public string PlayerPosition { get; set; }
+    }
+
+    public class PlayerFileLine
+    {
+        public PlayerFileLine()
+        { }
+
+        public PlayerFileLine(string playerLine)
+        {
+            PlayerLine = playerLine;
+        }
+
+        public string PlayerLine { get; set; }
+    }
+}

@@ -7,6 +7,6 @@ namespace NSFL.Models.Stats
 {
     public class TeamTPEViewModel
     {
-        
+        public List<Team.TeamViewModel> Teams { get; set; }
     }
 }
