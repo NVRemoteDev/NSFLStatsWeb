@@ -1,4 +1,4 @@
-(S3) DE - J.D. Boom,TPE: 70,
+(S3) - J.D. Boom - DE,TPE: 70,
 (S2) - Rafael Reyes - CB,TPE: 118,
 (S2) - Dieter Koch - OL,TPE: 110,
 (S2) - James Wright - LB,TPE: 101,
