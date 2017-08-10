@@ -24,7 +24,13 @@ namespace NSFL
                       "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/d3").Include(
-                      "~/Scripts/D3/d3.js"));
+                      "~/Scripts/d3/d3.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/datatables").Include(
+                      "~/Scripts/DataTables/jquery.dataTables.min.js"));
+
+            bundles.Add(new StyleBundle("~/Content/datatables").Include(
+                      "~/Content/DataTables/jquery.dataTables.min.css"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
