@@ -8,11 +8,69 @@
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-sm-4">
         <h2>Index</h2>
-        <ol class="breadcrumb">
-            <li class="active">
-                <strong>Team TPE Visual Statistics</strong>
-            </li>
-        </ol>
+        <h3>Player TPE</h3>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover playerDataTables">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => Model.AllPlayers.FirstOrDefault().PlayerSeasonDrafted)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => Model.AllPlayers.FirstOrDefault().TeamName)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => Model.AllPlayers.FirstOrDefault().PlayerFullName)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => Model.AllPlayers.FirstOrDefault().PlayerPosition)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => Model.AllPlayers.FirstOrDefault().PlayerTPE)
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var player in Model.AllPlayers)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(teamPlayer => player.PlayerSeasonDrafted)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(teamPlayer => player.TeamName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(teamPlayer => player.PlayerFullName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(teamPlayer => player.PlayerPosition)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(teamPlayer => player.PlayerTPE)
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h3>Team TPE</h3>
     </div>
 </div>
 
@@ -22,9 +80,6 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="ibox float-e-margins">
-                <div class="ibox-title">
-                    <h5>Team TPE</h5>
-                </div>
                 <div class="ibox-content">
 
                     <dl class="dl-vertical">
@@ -62,8 +117,6 @@
                                     <th>
                                         @Html.DisplayNameFor(model => team.Players.FirstOrDefault().PlayerTPE)
                                     </th>
-
-                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -105,8 +158,20 @@
     <script type="text/javascript">
         $(document).ready(function () {
 
+            $('.playerDataTables').DataTable({
+                pageLength: 10,
+                dom: '<"html5buttons"B>lTfgitp',
+                order: [[4, "desc"]],
+                buttons: [
+                    { extend: 'copy' },
+                    { extend: 'csv' },
+                    { extend: 'excel', title: 'InventoryExport' },
+                ]
+
+            });
+
             $('.dataTables').DataTable({
-                pageLength: 25,
+                pageLength: 10,
                 dom: '<"html5buttons"B>lTfgitp',
                 order: [[3, "desc"]],
                 buttons: [

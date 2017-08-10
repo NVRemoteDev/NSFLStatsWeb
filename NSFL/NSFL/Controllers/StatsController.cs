@@ -22,6 +22,7 @@ namespace NSFL.Controllers
         {
             var viewModel = new TeamTPEViewModel();
             viewModel.Teams = new List<TeamViewModel>();
+            viewModel.AllPlayers = new List<PlayerViewModel>();
 
             var playerFiles = TeamHelper.GetTeamPlayerFiles();
             foreach (var file in playerFiles)
@@ -49,8 +50,10 @@ namespace NSFL.Controllers
                         player.PlayerPosition = playerData.PlayerPosition;
                         player.PlayerSeasonDrafted = playerData.PlayerSeasonDrafted;
                         player.PlayerTPE = playerData.PlayerTPE;
+                        player.TeamName = team.TeamName;
 
                         team.Players.Add(player);
+                        viewModel.AllPlayers.Add(player);
                     }
 
                     var teamTPE = 0;
