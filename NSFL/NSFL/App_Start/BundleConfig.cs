@@ -26,11 +26,21 @@ namespace NSFL
             bundles.Add(new ScriptBundle("~/bundles/d3").Include(
                       "~/Scripts/d3/d3.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/d3scripts").Include(
+                      "~/Scripts/NSFLStats/TeamTPE.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/datatables").Include(
-                      "~/Scripts/DataTables/jquery.dataTables.min.js"));
+                      "~/Scripts/DataTables/jquery.dataTables.min.js",
+                      "~/Scripts/DataTables/buttons.html5.min.js",
+                      "~/Scripts/DataTables/buttons.flash.min.js",
+                      "~/Scripts/DataTables/buttons.print.min.js",
+                      "~/Scripts/DataTables/dataTables.buttons.min.js",
+                      "~/Scripts/DataTables/jszip.min.js",
+                      "~/Scripts/DataTables/vfs_fonts.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/DataTables/jquery.dataTables.min.css",
+                      "~/Content/DataTables/buttons.dataTables.min.css",
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
         }

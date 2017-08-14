@@ -22,3 +22,8 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.html5buttons {
+    float: right;
+    margin-left: 10px;
+}
