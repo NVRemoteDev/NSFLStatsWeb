@@ -16,6 +16,8 @@ namespace NSFL.Models.Player
         public int PlayerTPE { get; set; }
 
         public string PlayerPosition { get; set; }
+
+        public string PlayerProfileURL { get; set; }
     }
 
     public class PlayerFileLine

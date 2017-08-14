@@ -2,7 +2,6 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="row wrapper border-bottom white-bg page-heading">
@@ -41,6 +40,8 @@
                             <tbody>
                                 @foreach (var player in Model.AllPlayers)
                                 {
+                                    var playerUrl = player.PlayerProfileURL.Replace("&amp;", "&");
+                                    playerUrl = "http://nsfl.jcink.net/index.php?" + playerUrl.Split('&').Last();
                                     <tr>
                                         <td>
                                             @Html.DisplayFor(teamPlayer => player.PlayerSeasonDrafted)
@@ -49,8 +50,8 @@
                                             @Html.DisplayFor(teamPlayer => player.TeamName)
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(teamPlayer => player.PlayerFullName)
-                                        </td>
+                                            <a href="@playerUrl" target="_blank">@Html.DisplayFor(teamPlayer => player.PlayerFullName)</a>
+</td>
                                         <td>
                                             @Html.DisplayFor(teamPlayer => player.PlayerPosition)
                                         </td>
@@ -122,12 +123,14 @@
                             <tbody>
                                 @foreach (var player in team.Players)
                                 {
+                                    var playerUrl = player.PlayerProfileURL.Replace("&amp;", "&");
+                                    playerUrl = "http://nsfl.jcink.net/index.php?" + playerUrl.Split('&').Last();
                                     <tr>
                                         <td>
                                             @Html.DisplayFor(teamPlayer => player.PlayerSeasonDrafted)
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(teamPlayer => player.PlayerFullName)
+                                            <a href="@playerUrl" target="_blank">@Html.DisplayFor(teamPlayer => player.PlayerFullName)</a>
                                         </td>
                                         <td>
                                             @Html.DisplayFor(teamPlayer => player.PlayerPosition)
@@ -149,6 +152,7 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/datatables")
+    @Scripts.Render("~/bundles/d3scripts")
 
     <script type="text/javascript">
         $(document).ready(function () {

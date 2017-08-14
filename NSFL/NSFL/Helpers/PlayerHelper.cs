@@ -23,6 +23,7 @@ namespace NSFL.Helpers
                 player.PlayerLastName = playerFileLine.PlayerLine.Split('-')[1].Trim().Split(' ')[1].Trim();
                 player.PlayerTPE = int.Parse(playerFileLine.PlayerLine.Split(',')[1].Split(':').Last().Trim());
                 player.PlayerPosition = playerFileLine.PlayerLine.Split('-').Last().Split(',')[0].Trim();
+                player.PlayerProfileURL = playerFileLine.PlayerLine.Split(',')[2].Trim();
 
                 return player;
             }

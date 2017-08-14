@@ -36,5 +36,7 @@ namespace NSFL.Models.Player
                 return string.Format("{0} {1}", PlayerFirstName, PlayerLastName);
             }
         }
+
+        public string PlayerProfileURL { get; set; }
     }
 }

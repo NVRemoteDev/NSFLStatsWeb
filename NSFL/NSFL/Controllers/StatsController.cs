@@ -51,6 +51,7 @@ namespace NSFL.Controllers
                         player.PlayerSeasonDrafted = playerData.PlayerSeasonDrafted;
                         player.PlayerTPE = playerData.PlayerTPE;
                         player.TeamName = team.TeamName;
+                        player.PlayerProfileURL = playerData.PlayerProfileURL;
 
                         team.Players.Add(player);
                         viewModel.AllPlayers.Add(player);
