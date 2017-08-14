@@ -32,7 +32,7 @@ namespace NSFL
             bundles.Add(new ScriptBundle("~/bundles/datatables").Include(
                       "~/Scripts/DataTables/jquery.dataTables.min.js",
                       "~/Scripts/DataTables/buttons.html5.min.js",
-                      "~/Scripts/DataTables/buttons.flash.min.js",
+                      //"~/Scripts/DataTables/buttons.flash.min.js",
                       "~/Scripts/DataTables/buttons.print.min.js",
                       "~/Scripts/DataTables/dataTables.buttons.min.js",
                       "~/Scripts/DataTables/jszip.min.js",
