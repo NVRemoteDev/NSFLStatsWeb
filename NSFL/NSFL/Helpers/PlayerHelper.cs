@@ -28,7 +28,7 @@ namespace NSFL.Helpers
                 }
                 else // A last name is not required, prevent this player from being ommitted
                 {
-                    player.PlayerFirstName = playerFileLine.PlayerLine.Split('-')[1].Trim();
+                    player.PlayerFirstName = playerFileLine.PlayerLine.Split('-')[1].Trim().Split(' ')[0].Trim();
                     player.PlayerLastName = "";
                 }
                 player.PlayerTPE = int.Parse(playerFileLine.PlayerLine.Split(',')[1].Split(':').Last().Trim());
