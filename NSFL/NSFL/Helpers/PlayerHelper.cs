@@ -18,9 +18,10 @@ namespace NSFL.Helpers
                 }
 
                 var player = new Player();
+
                 player.PlayerSeasonDrafted = playerFileLine.PlayerLine.Split(')')[0].Replace("(", "").Trim();
 
-                if (playerFileLine.PlayerLine.Split('-')[1].Trim().Split(' ').Length > 0)
+                if (playerFileLine.PlayerLine.Split('-')[1].Trim().Split(' ').Length > 1)
                 {
                     player.PlayerFirstName = playerFileLine.PlayerLine.Split('-')[1].Trim().Split(' ')[0].Trim();
                     player.PlayerLastName = playerFileLine.PlayerLine.Split('-')[1].Trim().Split(' ')[1].Trim();
